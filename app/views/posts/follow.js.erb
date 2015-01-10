@@ -1,0 +1,1 @@
+$('.follow<%= @user_follow.id %>').html('<%= escape_javascript current_user.following?(@user_follow) ? "Unfollow #{@user_follow.username}" : "Following #{@user_follow.username}"%>');

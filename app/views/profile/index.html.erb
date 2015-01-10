@@ -1,0 +1,16 @@
+<%= render :partial => "shared/user_profile" %>
+<div class="span6 content-setting <%= @user.username == current_user.username ? 'spna6_spc' : ''-%>">
+    <div class="row">
+        <div class="">
+            <div class="public-profile">
+               <h2>News Feed from <%= @user.username-%></h2>
+                <%= render :partial => "shared/news_feed", :locals => {:post_news => @post_news, :special => @post_user} %>
+                <%= paginate @post_news -%>
+            </div>
+        </div>
+    </div>
+</div>
+<% if @user.username == current_user.username %>
+    <%= render :partial => "partial_paging/follow" %>
+<% end %>
+

@@ -1,0 +1,16 @@
+.buttonholder .checkbox{
+	line-height:25px;
+	margin:2px 0 0 0;
+}
+.checks .checkbox{
+	line-height:25px;
+	padding:1px 0 0 15px;
+	text-indent:4px;
+}
+.checks .label{
+
+}
+.checks .control-label{
+	width:auto!important;
+	padding-top:0px;
+}

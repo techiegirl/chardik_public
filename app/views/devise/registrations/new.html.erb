@@ -1,0 +1,47 @@
+<%= bootstrap_flash %>
+<!-- Sign Up @Start-->
+<div class="form-content clearfix only_signup">
+  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name),:html => {:class => ""}) do |f| %>
+      <%= f.error_notification %>
+      <h1><i class="iconbig-note-write"></i> Sign Up</h1>
+      <div class="info">(Field with asterisk are mandatory, but to get best result from the app please fill them up)</div>
+      <fieldset>
+        <div class="login-fields">
+          <!--<div class="field">-->
+            <!--<%#= f.input :first_name, :required => false, :autofocus => true,:input_html => {:class => "login username-field"} %>-->
+          <!--</div> &lt;!&ndash; /field &ndash;&gt;-->
+          <!--<div class="field">-->
+            <!--<%#= f.input :last_name, :required => false, :autofocus => true,:input_html => {:class => "login username-field"} %>-->
+          <!--</div> &lt;!&ndash; /field &ndash;&gt;-->
+          <!--<div class="field">-->
+            <%#= f.input :email, :required => false, :autofocus => true,:input_html => {:class => "login username-field"} %>
+          <!--<span style="font-size: 20px;margin-left: 6px;"> * </span>-->
+          <!--</div> &lt;!&ndash; /field &ndash;&gt;-->
+          <div class="field">
+            <%= f.input :username, :required => false, :autofocus => true,:input_html => {:class => "login username-field"} %> <span style="font-size: 20px;margin-left: 6px;"> * </span>
+          </div> <!-- /field -->
+          <div class="field">
+            <%= f.input :password, :required => false,:autofocus => true,:input_html => {:class => "login password-field"} %>  <span style="font-size: 20px;margin-left: 6px;"> * </span>
+          </div>
+          <!--<div class="field">-->
+            <!--<%#= f.input :birthday, :required => false,:autofocus => true,:input_html => {:class => "login", :style => "float: left;margin-right: 5px;"},:as => :date,:order => [:day,:month, :year], :prompt => ["- day -","- mounth -","- year -"], :start_year => Date.today.year,:end_year => Date.today.year - 90 %>-->
+          <!--</div> &lt;!&ndash; /field &ndash;&gt;-->
+          <div class="field">
+            <%= f.input :gender, :required => false,:autofocus => true,:input_html => {:class => "login gender"}, :collection => [ "Male", "Female", "Other"], :prompt => "- Select Gender -" %>
+          </div> <!-- /field -->
+          <div class="field">
+            <%= f.input :country, :required => false,:autofocus => true,:input_html => {:class => "login country"}, :prompt => "- Select Country -" %>
+          </div> <!-- /field --> <br/>
+          <!--<div class="field agree">-->
+            <%#= f.input :agree, :label => false, :class=>"field login-checkbox", :wrapper => :small, :as => :boolean %>
+          <!--<label class="choice" for="Field">Accept Terms & Condition</label>-->
+          <!--</div> &lt;!&ndash; /field &ndash;&gt;-->
+        </div> <!-- /login-fields -->
+        <div class="login-actions">
+          <%= f.button :submit, "Create my account!",:class => "btn btn-info pull-right" %>
+        </div> <!-- .actions -->
+      </fieldset>
+  <% end %>
+  <div><a href="/">Back To Sign In</a></div>
+</div>
+<!-- Sign Up @Ends-->

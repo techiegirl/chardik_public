@@ -1,0 +1,29 @@
+<%
+   if @user.blank?
+       @user = current_user
+   end
+%>
+<% if !@user.blank?%>
+    <div class="span3 left-sidebar">
+        <p><h3 class="t-center"><%= @user.username-%></h3></p>
+        <div class="account-settings">
+            <%= image_tag @user.avatar_url %>
+        </div>
+        <div class="account-detail">
+            <p><strong>Sign up :</strong></p>
+            <p><%= "#{time_ago_in_words(@user.created_at)} ago" -%></p>
+            <% if !@user.country.blank? %>
+                <p><strong>Location : </strong></p>
+                <p><%= @user.country-%></p>
+            <% end %>
+            <% if !@user.bio.blank? %>
+                <p><strong>Bio : </strong></p>
+                <p><%= @user.bio-%></p>
+            <% end %>
+        </div>
+        <% if @user.username == current_user.username %>
+          <div class="edit_pf"><a href="/users/edit">Edit Profile</a></div>
+        <% end %>
+    </div>
+<% else %>
+<% end %>

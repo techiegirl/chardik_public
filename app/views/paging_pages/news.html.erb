@@ -1,0 +1,11 @@
+<% if @post_news.blank? %>
+  <div class="news_feed" style="text-align: center;margin-top: 10px">
+    <p>The people you follow haven't posted anything lately!</p>
+  </div>
+<% else %>
+<div class="news_feed">
+  <%= render :partial => 'news_feed', :locals => {:post_news => @post_news, :special => ""} %>
+</div>
+<div id="back_to"></div>
+<%= paginate @post_news, :remote => true %>
+<% end %>

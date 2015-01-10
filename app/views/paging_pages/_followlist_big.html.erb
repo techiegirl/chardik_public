@@ -1,0 +1,8 @@
+<% f.each do |fo| %>
+  <div class="thumb_big">
+		<a href="#"><h5><%= fo.username %></h5></a>
+		<div class="image_thumb">
+  	  <%= image_tag fo.avatar_url() %>
+		</div>
+	</div>
+<% end %>

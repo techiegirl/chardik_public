@@ -1,0 +1,10 @@
+<%= render :partial => "shared/user_profile"-%>
+<!--main content-->			
+	<div class="span6 messages">
+	  <div class="well sidebar-nav signup">
+	  <h2>Users you follow</h2>
+			<div id="follower_big" class="data_load" data-url="/paging_pages/following_big"></div>
+	  </div><!--/.well -->
+	  <div class="shunt"></div>
+	</div><!--/span-->
+<%= render :partial => "partial_paging/follow" %>

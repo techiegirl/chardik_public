@@ -1,0 +1,22 @@
+<% if !@special_post.blank? %>
+    <div class="content1 news_feeded" style="display:none;" data-id="<%= @special_post.id %>" data-date="<%= @special_post.created_at.to_i %>" data-special="<%= special if special.blank? == false %>"></div>
+<% end %>
+<% post_news.each do |f|%>
+  <div class="content1 news_feeded" data-id="<%= f.id %>" data-date="<%= f.created_at.to_i %>" data-special="<%= special if special.blank? == false %>">
+  <div class="thumb">
+    <%= image_tag f.user.avatar_url %>
+    <%= link_to f.user.username, "/#{f.user.username}" %>
+  </div>
+  <p><span class="title"></span> <%= raw f.title[0..30] %> <span class="readmore"><%#= link_to "Read more...", post_path(f)%></span><br />
+  <span class="discussion">
+  	<% if f.user != current_user %>
+        <i class='icon-<%= current_user.following?(f.user) ? 'follow' : 'unfollow'%>'></i>
+	    <%= link_to follow_posts_path(:user => f.user), :remote => true, :class => "follow#{f.user.id}" do %>
+	      <%= current_user.following?(f.user) ? "Unfollow #{f.user.username}" : "Following #{f.user.username}"%>
+	    <% end %>
+        <i class='icon-message'></i>
+        <%= link_to "Send a message to #{f.user.username}", "/messages" -%>
+	  <% end %>
+  </span></p>
+  </div>
+<% end %>

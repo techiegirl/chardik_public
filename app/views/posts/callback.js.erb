@@ -1,0 +1,47 @@
+<% if !@failed -%>
+    function show_chart(current,index, user_post,option){
+        var chart_result_link = $('#chart_result_'+index);
+        var chart_div = $('#charting_'+index);
+        if (chart_div.hasClass("chart_visible") && option != 'option'){
+            chart_div.removeClass('chart_visible');
+            current.text('Chart Results By');
+            chart_div.hide();
+        }else{
+            chart_result_link.text('Hide Chart');
+            var selected_option_value = $('#selcting_'+index).find("option:selected").text();
+            $.ajax({
+                type: "GET",
+                url: "chart?user_post="+user_post+"&chartBy="+selected_option_value+"&index="+index,
+                dataType: "html",
+                success: function(user_post){
+                    chart_div.html(user_post);
+                    chart_div.addClass('chart_visible');
+                    chart_div.show();
+                }
+            });
+        }
+    }
+    var div = $('#posts');
+    var title = '<%= @title %>';
+    var posts = <%= raw @result %>;
+    div.empty();
+    $('.post_related').empty();
+    $('#paginator_post').empty();
+    $('.post_related').css("border", "none");
+    $('.post_related').css("height", "0px");
+    $('#moreresults').removeClass('in');
+    $('#moreresults').css("height", "0px");
+    div.html('<div class="well sidebar-nav"><h2>Search Results</h2><div id="tesa"></div></div>');
+    $(posts).each(function(index, item) {
+        ind = index;
+      $('#tesa').append('<div class="content1">' +
+        '<p><a href="paging_pages/related_post?title=' + item.commentString + '" data-toggle="collapse" data-remote="true" data-target="#moreresults" class="related_post"><span class="title">' + item.result +'</span></a></p>' +
+        '<div class="more_links"><span class="discussion">' +
+                '<i class="icon-discuss"></i><a href="posts/create_discussion?title=' + item.commentString +'" class="link_title discussion"> '+ item.start_or_join +'</a>' +
+            '</span>' +  '<span class="chart"><i class="icon-chart"></i><a id="chart_result_' + ind + '" onclick="show_chart($(this), ' + index + ',\'' + escape(item.commentString) + '\', \'' + '' +'\')">' + 'Chart Results By' + '</a></span><span class="chart_selection">'+ '<select onchange="show_chart($(this),' + index + ',\'' + escape(item.commentString) + '\', \'' + 'option' +'\')" id="selcting_' + index + '"><option value="country">Country</option><option value="gender">Gender</option></select>'  +'</span></div>' + '<div id="charting_' + ind + '"></div></div>');
+    });
+<% else -%>
+     $("#posts").html("<span style='color:red;font-weight:bold;'> <%= @result-%> </span>");
+<% end-%>
+        
+       

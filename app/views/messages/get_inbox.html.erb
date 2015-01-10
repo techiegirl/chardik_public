@@ -1,0 +1,21 @@
+<table class="table" id="inbox">
+	<thead>
+	  <tr>
+		<th>From</th>
+		<th>Subject</th>
+		<th>Date</th>
+		<th></th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <% @user_messages.each do |f|%>
+	    <tr class="<%= (f.message_read? ? "" : "unread #{f.id}") %>">
+			  <td><a data-toggle="modal" href="#myMail<%= f.id %>" <%= f.message_read? ? "" : "data-link="+message_read_user_messages_path(f) %>><%= f.sender.username %></a></td>
+			  <td><a data-toggle="modal" href="#myMail<%= f.id %>" <%= f.message_read? ? "" : "data-link="+message_read_user_messages_path(f) %>><%= f.subject %></a></td>
+			  <td><a data-toggle="modal" href="#myMail<%= f.id %>" <%= f.message_read? ? "" : "data-link="+message_read_user_messages_path(f) %>><%= f.created_at.strftime("%D") %></a></td>
+			  <td><%= link_to "delete", user_message_path(current_user, f), :method => :delete, :confirm => "are you sure ?"%></td>
+		  </tr>
+		  <%= render :partial => "messaging", :locals => {:f => f} %>
+	  <% end %>
+	</tbody>
+</table>

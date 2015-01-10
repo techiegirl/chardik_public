@@ -1,0 +1,7 @@
+ <% if @failed %>
+    <div class="alert">Sorry No Result Found!!</div>
+<% else %>
+    <%= render_chart(@chart, "charting_#{@param_index}") %>
+<% end %>
+
+

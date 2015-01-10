@@ -1,0 +1,12 @@
+<% if @post_news.current_page == 1 %>
+	$('.news_feed').html('<%= escape_javascript render(:partial => "news_feed", :locals => {:post_news => @post_news, :special => @post_user}) %>');
+<% else %>
+	$('.news_feed').append('<%= escape_javascript render(:partial => "news_feed", :locals => {:post_news => @post_news, :special => @post_user}) %>');
+<% end %>
+
+<% if @post_news.last_page? %>
+	//$('#news #back_to').html('<%= link_to "back to post", news_paging_pages_path,:remote => true %>')
+	$('#news .pagination').text('No more data....')
+<% else %>
+	$('#news .pagination').replaceWith('<%= escape_javascript(paginate(@post_news, :remote => true).to_s) %>');
+<% end %>

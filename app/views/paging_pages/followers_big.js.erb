@@ -1,0 +1,2 @@
+$('.users_big').html('<%= escape_javascript render(:partial => "followlist_big", :locals => {:f => @follow_big_users}) %>');
+$('#paginator_big').html('<%= escape_javascript(paginate(@follow_big_users, :remote => true).to_s) %>');

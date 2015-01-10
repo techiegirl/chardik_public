@@ -1,0 +1,7 @@
+<div class="info_message">
+  <p><b><%= message.sender.username == current_user.username ? "#{current_user.username}" : "from : #{message.sender.username}" %></b>, <%= message.created_at.strftime("%d %B %Y %H:%M")%></p>
+</div>
+<div class="info_body">
+  <%= raw message.body %>
+</div>
+<br/>

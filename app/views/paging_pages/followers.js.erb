@@ -1,0 +1,3 @@
+$('.users2').html('<%= escape_javascript render(:partial => "followlist", :locals => {:f => @follow_users}) %>');
+$('.users2.thumb').html('<%= escape_javascript render(:partial => "followthumb", :locals => {:f => @follow_users}) %>');
+$('#paginator2').html('<%= escape_javascript(paginate(@follow_users, :remote => true).to_s) %>');

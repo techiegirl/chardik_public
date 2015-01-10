@@ -1,0 +1,40 @@
+<% if total_pages > 1 %>
+  <% bound = 5 %>
+  <% upper_bound = current_page + bound - 1 %>
+  <% upper_bound = total_pages if total_pages < bound %>
+  <% lower_bound = 1 %>
+  <div class="pagination">
+  	<ul>
+  	  <% if current_page == 1 %>
+  		  <li class="disabled"><a href="#moreresults">&lt;</a></li>
+  		<% else %>
+  		  <li><a href="paging_pages/related_post?page=<%=current_page - 1%>&title=<%= title_text %>" data-remote="true" data-target="#moreresults">&lt;</a></li>
+  		<% end %>
+  		<% if current_page - bound > 0 %>
+  		  <li class="disabled"><a href="#moreresults">...</a></li>
+  		<% end %>
+  		<% for i in lower_bound..upper_bound.to_i %>
+  		  <% if i <= total_pages && (current_page - bound) < i %>
+  		    <li class="<%= i == current_page ? 'active' : '' %>"><a href="paging_pages/related_post?page=<%=i%>&title=<%= title_text %>" data-remote="true" data-target="#moreresults"><%= i %></a></li>
+  		  <% end %>
+  		<% end %>
+  		<% if upper_bound < total_pages %>
+  		  <li class="disabled"><a href="#moreresults">...</a></li>
+  		<% end %>
+
+  		<% if current_page == total_pages %>
+  		  <li class="disabled"><a href="#moreresults">&gt;</a></li>
+  		<% else %>
+  		  <li><a href="paging_pages/related_post?page=<%=current_page + 1%>&title=<%= title_text %>" data-remote="true" data-target="#moreresults">&gt;</a></li>
+  		<% end %>
+  		
+  		<!-- <li class="active">
+  		<a href="#">1</a>
+  		</li>
+  		<li><a href="#">2</a></li>
+  		<li><a href="#">3</a></li>
+  		<li><a href="#">4</a></li> -->
+		
+  	</ul>
+  </div>
+<% end %>

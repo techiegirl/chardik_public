@@ -1,0 +1,28 @@
+allow_debugging: on
+package_assets: always
+compress_assets: on
+embed_assets: off
+gzip_assets: on
+javascripts:
+  workspace:
+    - public/js/jquery.js
+    - public/js/jquery_ujs.js
+    - public/js/application.js
+    - public/js/jquery.mousewheel-3.0.6.pack.js
+    - public/js/jquery-ui-1.8.23.custom.min.js
+    - public/js/jquery.timeago.js
+    - public/js/bootstrap.js
+    - public/source/jquery.fancybox.js
+    - public/js/image-gallery.js
+    - public/js/jsapi.js
+
+stylesheets:
+  common:
+    - public/css/bootstrap.css
+    - public/css/style.css
+    - public/css/icon-style.css
+    - public/css/bootstrap-responsive.css
+    - public/css/overwrite.css
+    - public/css/application.css
+    - public/css/jquery-ui.css
+    - public/source/jquery.fancybox.css

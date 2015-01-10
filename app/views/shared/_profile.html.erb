@@ -1,0 +1,22 @@
+<div class="span2">
+  <div class="well sidebar-nav grey">
+		<ul class="nav center" style="margin-bottom: 0px;">
+		  <li class="nav-header">
+		    <%= link_to root_path do %>
+		      <%= current_user.username %>
+		    <% end %>
+		  </li>
+		  <li>
+		    <div class="thumb profile_pic">
+				  <%= image_tag current_user.avatar_url %>
+		    </div>
+		   </li>
+		</ul>
+	<ul class="nav">
+	  <li class="active" style="font-size: 12px;"><%#= link_to "Home", root_path %>From <%= current_user.country-%></li>
+	  <!--<li><%#= link_to "Profile", edit_user_registration_path %></li>-->
+	  <!--<li><%#= link_to "Your Followers", your_followers_posts_path %></li>-->
+	  <!--<li><%#= link_to "Users you follow", your_following_posts_path %></li>-->
+	</ul>
+  </div><!--/.well -->
+</div><!--/span-->

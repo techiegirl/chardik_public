@@ -1,0 +1,7 @@
+<%= render :partial => "shared/user_profile"-%>
+<!--main content-->	
+	<div class="span6 borders">
+    <%= nested_comments(@comments) %>
+	  <div class="shunt"></div>
+	</div><!--/span-->
+<%= render :partial => "partial_paging/follow" %>

@@ -1,0 +1,55 @@
+<script type="text/javascript">
+  function show_box(comment_id){
+    $('#res'+comment_id).hide();
+    $('#reply'+comment_id).show();
+    $('#reply'+comment_id).height = "auto";
+  }
+</script>
+<ul class="reply">
+  <li>
+	<div class="commentbox clearfix">
+	  <div class="votes">
+		  <div class="voteup">
+			  <%= link_to voteup_path(comment,comment.class),:remote => true do%>
+			    <i class="icon-chevron-up"></i>
+			  <% end %>
+			</div>
+		  <div class="votedown">
+			  <%= link_to votedown_path(comment,comment.class),:remote => true do%>
+			    <i class="icon-chevron-down"></i>
+			  <% end %>
+          </div>
+	  </div>
+	  <div class="topic clearfix">
+		<div class="thumb">
+		  <%= link_to comment_path(comment) do %>
+		    <%= image_tag comment.user.avatar_url(:thumb) %>
+		  <% end %>
+          <p>
+		  <%= comment.comment_text %>
+		</p>
+		  <p class="right"><span class="title"><a href="/<%= comment.user.username %>"><%= comment.user.username %></a></span>
+          <span class="commentsub"><%= "#{time_ago_in_words(comment.created_at)} ago" -%></span>
+
+		  <br /><span class="commentsub <%= comment.class.to_s %><%= comment.id %>"><%= votesize(comment,comment.class.to_s) %></span>
+		  </p>
+		</div>
+		<p>
+
+		<a href="#moreresults" class="reply_container" id="res<%= comment.id %>" data-toggle="collapse" data-target="#reply<%= comment.id %>" value="Hide" onclick="show_box(<%= comment.id %>);">Reply <i class="icon-comment"></i></a>
+
+		<div id="reply<%= comment.id %>" class="collapse">
+		  <%= simple_form_for Comment.new, :url => comments_path do |n| %>
+		    <%= n.input :parent_id, :label => false, :as => :hidden, :input_html => {:value => comment.id }%>
+		    <%= n.input :post_id, :label => false, :as => :hidden, :input_html => {:value => comment.post.id }%>
+		    <%= n.input :comment_text, :label => false, :input_html => {:class => "input-80", :placeholder => "Add a comment", :rows => "1"} %>
+		    <div class="buttonholder">
+				  <%= n.submit "Add Reply", :class => "btn pull-right btn-info" %>
+            </div>
+		  <% end %>
+		</div> <!--/topic-->		
+	</div><!--/commentbox-->
+	</div><!--/commentbox-->
+	<!--replies-->
+  </li>
+</ul>

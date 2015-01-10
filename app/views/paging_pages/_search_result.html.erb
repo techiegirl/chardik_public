@@ -1,0 +1,15 @@
+<% @posts.each do |f| %>
+  <div class="content1">
+    <p>
+      <span class="title"><%= link_to f.title, post_path(f) %></span>
+      <%#= raw f.post_text %>
+    </p>
+    <span class="discussion">
+			<a href="#moreresults" data-toggle="collapse" data-target="#moreresults" class="related_post" data-url="paging_pages/related_post?title=<%= f.title %>">Related Posts</a> 
+			<a href="#moreresults" data-toggle="collapse" data-target="#moreresults" class="link_title">Link title</a> 
+			<%= link_to post_path(f),:class => "discussion" do %>
+			  <%= f.comments.empty? ? "Start a discussion on this topic" : "Join a discussion on this topic" %> <i class='icon-comment'></i>
+			<% end %>
+		</span>
+  </div>
+<% end %>

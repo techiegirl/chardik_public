@@ -1,0 +1,1 @@
+$('#news .news_feed').prepend('<%= escape_javascript render(:partial => "news_feed", :locals => {:post_news => @post_news, :special => @post_user }) %>');

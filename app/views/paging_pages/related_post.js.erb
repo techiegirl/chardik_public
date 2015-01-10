@@ -1,0 +1,34 @@
+<% if !@failed -%>
+    var div = $('#related_post');
+    var posts = <%= raw @r %>;
+    div.empty();
+    //$('.related_post .toggle_bind').attr('data-toggle').val(" ");
+    $('#moreresults').addClass('in');
+    $('#moreresults').css("height", "auto");
+    $('#paginator_post').html('<%= escape_javascript(render( :partial => "paging_pages/paginate", :locals => {:total_pages => @total_pages, :current_page => @current_page, :title_text => @title_text}))%>');
+    $(posts).each(function(index, item) {
+        var username="";
+        if(item.username != "Anonymous"){
+            username = '<a href="/'+item.username+'">'+item.username+'</a>';
+        }
+        else{
+            username = item.username;
+        }
+      div.append('<div class="content1 post_related">'+
+            '<div class="thumb">'+
+                '<img src="'+item.image_url+'" />'+ username +
+            '</div>'+
+            '<p style="width: 400px;margin-bottom: 0;">'+
+            '<span class="title">'+
+            ' <a href="#">'+item.post+
+            '</a></span>'+
+            '<div class="more_links"> <span class="discussion">'+
+                item.page_link+
+            '</span></div>'+
+            '<p>'+ '<p style="float: right;font-size: 12px;text-align: right;width: 125px;">'+ item.post_at + ' ago</p>' +
+            '</div>'+
+            '<div style="clear: both;"></div>');
+    });
+<% else -%>
+     $("#related_post").html("<span style='color:red;font-weight:bold;'> <%= @result-%> </span>");
+<% end-%>

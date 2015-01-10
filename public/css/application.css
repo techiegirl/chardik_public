@@ -1,0 +1,143 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require bootstrap
+ *= require bootstrap-responsive
+ *= require fontface
+ *= require jquery-ui
+ *= require_self
+ */
+
+input.file{
+	display: none;
+}
+
+.checkbox{
+	min-height: 0px;
+}
+
+input[type=checkbox]{
+	margin-right: 1px;
+}
+
+.profile p.help-block{
+	*margin: 10px 0 0 90px;
+}
+
+label.password{
+}
+
+.help-block{
+	color: red;
+}
+
+.nested_comments {
+  margin-left: 30px;
+}
+
+#username_result{
+	display: block;
+	position: absolute;
+	background: white;
+	margin-left: 100px;
+	padding: 10px;
+	border: solid 1px black;
+}
+
+.get_message{
+	cursor: pointer;
+}
+
+.add_user{
+	cursor: pointer;
+}
+
+#auto_post_result{
+	display: block;
+	position: absolute;
+}
+
+ul.ui-autocomplete {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: solid 1px #999;
+  cursor: default;
+    background: none;
+    background: #F8F8F8;
+  li {
+    background-color: #FFF;
+    border-top: solid 1px #DDD;
+    margin: 0;
+    padding: 0;
+    a {
+      color: #000;
+      display: block;
+      padding: 3px;
+    }
+    a.ui-state-hover, a.ui-state-active {
+      background-color: #FFFCB2;
+    }
+  }
+}
+
+.thumb_big{
+	padding: 10px;
+	float: left;
+	width: 130px;
+	text-align: center;
+}
+
+.thumb_big h5{
+		font-size: 20px;
+		margin-bottom: 5px;
+}
+
+.nested_messages{
+	width: 100%;
+}
+
+.info_body{
+	margin-left: 5px;
+}
+
+.btn-send{
+	text-align: right;
+	padding-right: 10px;
+}
+
+.inbox textarea{
+	width: 90%;
+}
+
+#buttoninout{
+	width: 100%;
+}
+
+#buttoninout h3{
+	float: left;
+}
+
+/* replacing */
+/*.post_related{*/
+	/*height: 90px;*/
+/*}*/
+
+.news_feeded{
+	padding-bottom: 60px;
+	
+}
+.chart_visible{
+    display:inline;
+}
+
+
+

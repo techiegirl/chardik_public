@@ -1,0 +1,90 @@
+<%= render :partial => "shared/user_profile"-%>
+<!--main content-->	
+	<div class="span6 borders">
+	  <% if !user_signed_in? %>
+	    <div class="commentbox clearfix">
+  	    <h2><%= link_to "Sign up for Chardik", root_path %></h2>
+  	  </div>
+	  <% end %>
+	  <div class="commentbox clearfix">
+		  <div class="votes">
+			  <div class="voteup">
+  			  <%= link_to voteup_path(@post,@post.class),:remote => true do%>
+  			    <i class="icon-chevron-up"></i>
+  			  <% end %>
+  			</div>
+			  <div class="votedown">
+  			  <%= link_to votedown_path(@post,@post.class),:remote => true do%>
+  			    <i class="icon-chevron-down"></i>
+  			  <% end %>
+  			</div>
+		  </div>
+		  <div class="topic clearfix">
+		    <span class="commentsub" style="float: right;"><span class="commentsub"><%= "#{time_ago_in_words(@post.created_at)} ago" -%></span></span>
+			<h2><%=raw @post.title %></h2>
+			<span class="commentsub <%= @post.class.to_s %><%= @post.id %>"><%= votesize(@post,@post.class.to_s) %></span>
+			<% if user_signed_in? %>
+			  <%= simple_form_for @post, :url => post_path(@post) do |f| %>
+  			  <%= f.simple_fields_for :comments do |n| %>
+  			  <% if n.object.new_record? %>
+    			    <%= n.input :comment_text,:label => false, :input_html => {:class => "input-80", :rows => "1", :placeholder => "Add a comment"} %>
+    			    <%= n.input :user_id,:label => false,:as => :hidden, :input_html => {:value => current_user.id} %>
+    			  <% end %>
+  			  <% end %>
+  			  <div class="buttonholder">
+    			  <%= f.submit "Add Comment",:class => "btn pull-right btn-info" %>
+    			</div>
+  			<% end %>
+			<% end %>
+	      </div><!--/topic-->		
+	  </div><!--/commentbox-->
+	  
+<!--comments-->
+    <%= nested_comments(@comments) %>
+    <%# if user_signed_in? %>
+      <!--<div id="back_to"><%#= link_to "back to search result", root_path(:result => @post.title)%></div>-->
+    <%# end %>
+	  <div class="shunt"></div>
+	</div><!--/span-->
+	<!--right sidebar-->
+		<!--<div class="span4">-->
+		  <!--<div class="well sidebar-nav">-->
+		  <!--<h2 class="related">Related Discussions</h2>-->
+		 	  <!--<div class="content1">-->
+				<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <span class="readmore"><a href="#">Read more...</a></span></p>-->
+			  <!--</div>-->
+			  <!--<div class="content1">-->
+				<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mauris nibh. <span class="readmore"><a href="#">Read more...</a></span></p>-->
+			  <!--</div>-->
+			  <!--<div class="content1">-->
+				<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="readmore"><a href="#">Read more...</a></span></p>-->
+			  <!--</div>-->
+			  <!--<div class="content1">-->
+				<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="readmore"><a href="#">Read more...</a></span></p>-->
+			  <!--</div>-->
+			  <!--<div class="content1">-->
+				<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="readmore"><a href="#">Read more...</a></span></p>-->
+			  <!--</div>-->
+			  <!--<div class="content1">-->
+				<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="readmore"><a href="#">Read more...</a></span></p>-->
+			  <!--</div>-->
+			  <!--<div class="content1">-->
+				<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="readmore"><a href="#">Read more...</a></span></p>-->
+			  <!--</div>-->
+			  <!--<div class="content1">-->
+				<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mauris nibh. <span class="readmore"><a href="#">Read more...</a></span></p>-->
+			  <!--</div>	-->
+				<!--<div class="pagination">-->
+					<!--<ul>-->
+						<!--<li><a href="#"><</a></li>-->
+						<!--<li class="active">-->
+						<!--<a href="#">1</a>-->
+						<!--</li>-->
+						<!--<li><a href="#">2</a></li>-->
+						<!--<li><a href="#">3</a></li>-->
+						<!--<li><a href="#">4</a></li>-->
+						<!--<li><a href="#">></a></li>-->
+					<!--</ul>-->
+				<!--</div>-->
+		  <!--</div>&lt;!&ndash;/.well &ndash;&gt;-->
+		<!--</div>&lt;!&ndash;/span&ndash;&gt;-->

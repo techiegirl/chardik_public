@@ -1,0 +1,57 @@
+
+<%= render :partial => "shared/user_profile"-%>
+<!--main content-->			
+	<div class="span6 messages">
+	  <div class="well sidebar-nav signup">
+	  <h2>Messages</h2>
+		
+		<h3><a href="#" data-toggle="collapse" data-target="#compose">New Message</a></h3>
+		
+		<div id="compose" class="collapse">
+		  <%= simple_form_for @message, :url => {:controller => 'messages', :action => 'create'},:html => {:class => "form-horizontal"} do |f| %>
+		    <fieldset>
+		      <div class="control-group">
+		        <%= f.input :recipient, :label => "to",:id => 'username_search',:input_html => {:value => "#{@recipient}",:id => 'username_search',:class => "input-large focused", data: {autocomplete_source: get_user_message_user_messages_path(current_user.id)}} %>
+		        <%= f.input :subject,:input_html => {:class => "input-large focused"} %>
+		        <%= f.input :body, :label => "message",:input_html => {:class => "input-xlarge",:rows => "3", :width => "300px"}%>
+		      </div>
+		      <div class="buttonholder pull-right">
+						  <%= f.submit "Send",:class => "btn btn-info inbox" %>
+					</div>
+		    </fieldset>
+      <% end %>
+		</div><!--/compose-->
+		<div id="buttoninout" class="nav nav-tabs">
+		  <li class="first active"><a onclick="$('.second').removeClass('active');" data-url="/users/<%= current_user.id %>/messages/get_inbox" class="get_message" data-toggle="tab">Inbox</a></li>
+		  <li class="second"><a onclick="$('.first').removeClass('active');" data-url="/users/<%= current_user.id %>/messages/get_outbox" class="get_message" data-toggle="tab">Outbox</a></li>
+		</div>
+		<div style="clear: both"></div>
+		<div class="eighty">	  
+			<table class="table" id="inbox">
+              <%# if !@user_messages.blank? %>
+				<thead>
+				  <tr>
+					<th>From</th>
+					<th>Subject</th>
+					<th>Date</th>
+					<th></th>
+				  </tr>
+				</thead>
+                <%# end -%>
+				<tbody>
+				  <% @user_messages.each do |f|%>
+				    <tr class="<%= (f.message_read? ? "" : "unread #{f.id}") %>">
+  					  <td><a data-toggle="modal" href="#myMail<%= f.id %>" <%= f.message_read? ? "" : "data-link="+message_read_user_messages_path(f) %>><%= f.sender.username %></a></td>
+  					  <td><a data-toggle="modal" href="#myMail<%= f.id %>" <%= f.message_read? ? "" : "data-link="+message_read_user_messages_path(f) %>><%= f.subject %></a></td>
+  					  <td><a data-toggle="modal" href="#myMail<%= f.id %>" <%= f.message_read? ? "" : "data-link="+message_read_user_messages_path(f) %>><%= f.created_at.strftime("%D") %></a></td>
+  					  <td><%= link_to "delete", user_message_path(current_user, f), :method => :delete, :confirm => "are you sure ?"%></td>
+  				  </tr>
+  				  <%= render :partial => "messaging", :locals => {:f => f} %>
+				  <% end %>
+				</tbody>
+			</table>
+		</div><!--/.80 -->		
+	  </div><!--/.well -->
+	  <div class="shunt"></div>
+	</div><!--/span-->
+<%= render :partial => "partial_paging/follow" %>

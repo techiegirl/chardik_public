@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  find_by_email: false
+  new_follower: false
+  direct_message: false
+  comment_reply: false
+
+two:
+  user_id: 1
+  find_by_email: false
+  new_follower: false
+  direct_message: false
+  comment_reply: false

@@ -1,0 +1,2 @@
+$('.search_result').html('<%= escape_javascript render(:partial => "search_result", :locals => {:post => @posts}) %>');
+$('#paginator').html('<%= escape_javascript(paginate(@posts, :remote => true).to_s) %>');

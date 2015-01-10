@@ -1,0 +1,21 @@
+<table class="table" id="inbox">
+	<thead>
+	  <tr>
+		<th>For</th>
+		<th>Subject</th>
+		<th>Date</th>
+		<th></th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <% @user_messages.each do |f|%>
+	    <tr>
+			  <td><a data-toggle="modal" href="#myMail<%= f.id %>" ><%= User.find(f.recipient_id).username %></a></td>
+			  <td><a data-toggle="modal" href="#myMail<%= f.id %>" ><%= f.subject %></a></td>
+			  <td><a data-toggle="modal" href="#myMail<%= f.id %>" ><%= f.created_at.strftime("%D") %></a></td>
+			  <td><%= link_to "delete", user_message_path(current_user, f), :method => :delete, :confirm => "are you sure ?"%></td>
+		  </tr>
+		  <%= render :partial => "messaging", :locals => {:f => f} %>
+	  <% end %>
+	</tbody>
+</table>

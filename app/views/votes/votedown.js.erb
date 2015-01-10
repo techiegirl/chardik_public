@@ -1,0 +1,1 @@
+$('.commentsub.<%= @vote.class.to_s %><%= @vote.id %>').html('<%= escape_javascript render(:partial => "votes", :locals => {:vote => @vote}) %>');

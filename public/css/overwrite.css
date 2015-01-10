@@ -1,0 +1,573 @@
+body{
+    background: none;
+    background-color: #EDEDED;
+    line-height: 15px;
+    font-size: 14px;
+}
+h1{
+    font-size: 24px;
+}
+.icon-lock {
+    background-position: -169px 1px;
+    padding: 2px;
+}
+.icon-discuss{
+    background-position: -236px -116px;
+    padding: 2px;
+}
+.icon-chart{
+     background-position: -408px 1px;
+    padding: 3px;
+}
+.icon-follow{
+    background-position: -142px -141px;
+    padding: 2px;
+}
+.icon-unfollow{
+    background-position: -168px -141px;
+    padding: 2px;
+}
+.icon-message{
+    background-position: -70px 2px;
+    padding: 2px;
+}
+.inbx .icon-lock {
+    background-position: -265px -23px;
+}
+.dropdown .icon-lock {
+    background-position: -311px -117px;
+}
+.span2{
+    width: 13%;
+}
+.span6 {
+    width: 58%;
+}
+.feed_container .span6{
+    width: 66%;
+    margin-left: 60px;
+    padding-bottom: 10px;
+}
+.feed_container .spna6_spc{
+    margin-left: 30px;
+    width: 54%;
+}
+.span4 {
+    width: 20%;
+}
+.span3 {
+    width: 18%;
+}
+.container{
+    width: 90%;
+    background-color: #fff;
+    padding-top: 20px;
+}
+.navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    width: 100%;
+}
+.nav-header{
+    text-align: center;
+}
+.nav-list{
+    padding-top: 3px;
+}
+.nav-list > .active > a, .nav-list > .active > a:hover {
+    background-color: #0C6989;
+}
+.btn-info {
+    background-color: #0C6989;
+    *background-color: #2f96b4;
+    background-image: -ms-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0C6989), to(#0C6989));
+    background-image: -webkit-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: -o-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: -moz-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: linear-gradient(center top , #0C6989, #0C6989);
+    background-repeat: repeat-x;
+    border-color: #2f96b4 #2f96b4 #1f6377;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#5bc0de', endColorstr='#2f96b4', GradientType=0);
+    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+#auto_post{
+    height: 34px;
+    width: 540px;
+    font-size: 14px;
+    color: #333;
+}
+.new_post .inputbox{
+    width: 730px;
+}
+.new_post .controls{
+    float: left;
+}
+.new_post .pull-right {
+    float: left;
+    height: 28px;
+    margin-left: 8px;
+    margin-top: 8px;
+    width: 70px;
+}
+#post_anonymous{
+    margin-left: 0px;
+    margin-top: 15px;
+}
+
+.boolean .boolean{
+    float: right;
+    margin-top: 13px;
+}
+.footer .company{
+    float: left;
+    padding-left: 20px;
+    width: 45%;
+}
+.footer .terms{
+    float: right;
+    padding-right: 20px;
+    width: 45%;
+}
+
+.content1{
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.well h2{
+    border-bottom: 1px dotted #CCCCCC;
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+.discussion{
+    padding-right: 5px;
+
+}
+.discussion a{
+    color: #5D87AE;
+    font-size: 12px;
+    padding-right: 5px;
+}
+.form-content{
+    width: 335px;
+    margin-left: 100px;
+    background-color: #F5F5F5;
+    float: left;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-bottom: 20px;
+    min-height: 20px;
+    padding: 19px;
+}
+.date{
+    *width: 100px;
+}
+#user_remember_me{
+    margin-top: 4px;
+    margin-right: 4px;
+    margin-left: -15px;
+}
+.login-fields .controls input{
+    width: 180px;
+    font-family: "Helvetica Neue,​Helvetica,​Arial,​sans-serif";
+    font-size: 14px;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    height: 14px;
+}
+select{
+    height: 25px;
+}
+.login-fields label{
+    display: block;
+    float: left;
+    margin-right: 12px;
+    margin-top: 5px;
+    width: 50px;
+}
+.login-actions .choice{
+    width: 130px;
+}
+.date .controls{
+    width: 270px;
+    *clear: both;
+}
+#new_user h1{
+    margin-bottom: 6px;
+}
+.login-fields .btn-primary{
+    background-color: #0C6989;
+    background-image: -moz-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: -ms-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0C6989), to(#0C6989));
+    background-image: -webkit-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: -o-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: linear-gradient(center top , #0C6989, #0C6989);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    margin-top: 17px;
+    padding: 6px 5px 6px 6px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    width: 70px;
+}
+.navbar-inner {
+    min-height: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-image: -moz-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: -ms-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0C6989), to(#0C6989));
+    background-image: -webkit-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: -o-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: linear-gradient(center top , #0C6989, #0C6989);
+    background-repeat: repeat-x;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    border-top:1px solid #ccc;
+}
+.navbar-inner{
+    *background-image: -moz-linear-gradient(center top , #0C6989, #0C6989);
+}
+
+.btn-primary {
+    background-color: #0C6989;
+    *background-color: #0055cc;
+    background-image: -ms-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0C6989), to(#0C6989));
+    background-image: -webkit-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: -o-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: -moz-linear-gradient(center top , #0C6989, #0C6989);
+    background-image: linear-gradient(center top , #0C6989, #0C6989);
+    background-repeat: repeat-x;
+    border-color: #0055cc #0055cc #003580;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#0088cc', endColorstr='#0055cc', GradientType=0);
+    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+.navbar .divider-vertical {
+    background-color: #3D9BD3 !important;
+}
+.navbar .nav > li > a{
+    color: #fff;
+}
+.news_feed,
+#posts{
+    width: 520px;
+    margin-top: 20px;
+}
+.news_feed,
+#news,
+.news_feed .pagination{
+    float: left;
+}
+#posts,
+#moreresults{
+     width: 550px;
+}
+.posts_container{
+    margin-left: 35px;
+}
+#related_post .content1,
+.news_feed .content1,
+#related_post .thumb,
+.news_feed .thumb,
+#related_post .content1 p,
+.news_feed .content1 p{
+    float: left;
+}
+#related_post .thumb a,
+.news_feed .thumb a{
+    display: block;
+    text-align: center;
+    word-wrap: break-word;
+}
+#related_post .thumb,
+.news_feed .thumb{
+    width: 50px;
+}
+.thumb img{
+    width: 42px;
+}
+#related_post .content1 p,
+.news_feed .content1 p{
+    width: 80%;
+    margin-left: 10px;
+}
+.news_feed .content1,
+#related_post .content1{
+    width: 97%;
+    padding-bottom: 0px;
+    padding-bottom: 10px;
+}
+#related_post .content1{
+    padding-bottom: 0px;
+}
+.content1 .chart a{
+    color: #5D87AE;
+    font-size: 12px;
+    cursor: pointer;
+}
+#tesa .content1 .title{
+    font-size: 15px;
+}
+.well{
+    background-color: #FFFFFF;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 0;
+}
+a {
+    color: #0C6989;
+}
+
+.btn-info:hover,
+.btn-info:active,
+.btn-info.active,
+.btn-info.disabled,
+.btn-info[disabled],
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled]{
+    background-color: #0C6989;
+}
+
+.navbar .nav > li > a:hover {
+    color: #fff;
+}
+.post_related .more_links{
+    float: left;
+    padding-left: 11px;
+    padding-top: 10px;
+}
+.follow1{
+    padding-right: 8px;
+}
+
+/*Comment Styels*/
+.commentbox form{
+    margin-top: 10px;
+}
+.controls textarea{
+    width: 480px;
+}
+.commentbox .votes{
+    float: left;
+    padding-right: 12px;
+}
+.commentbox .buttonholder input{
+   font-size: 10px;
+}
+.commentbox .buttonholder{
+    float: right;
+    margin-top: 8px;
+}
+.commentbox .controls{
+    float: left;
+    margin-right: 10px;
+}
+.reply{
+    list-style: none outside none;
+    margin-top: 12px;
+    float: left;
+}
+.reply .commentbox{
+    border-bottom: 1px solid #CCCCCC;
+    padding: 5px;
+}
+
+.topic .thumb a{
+    float: left;
+    margin-right: 8px;
+}
+.right time,
+.right .commentsub,
+.topic .collapse,
+.nav-pills{
+    float: right;
+}
+.right{
+    margin-top: 15px;
+}
+.topic .commentsub a{
+    float: none;
+}
+.commentsub,
+.reply_container,
+.collapse .controls{
+    margin-left: 25px;
+}
+
+.messages_container .span6,
+.profile{
+    width: 53%;
+}
+
+.messages_container .controls input,
+.messages_container .controls textarea{
+    margin-bottom: 12px;
+    margin-left: 12px;
+    width: 300px;
+}
+.messages_container .controls textarea{
+    height: 100px;
+}
+#new_post input:-moz-placeholder{
+  color: grey;
+}
+#new_post input:-ms-input-placeholder{
+  color: grey;
+}
+#new_post input:-webkit-input-placeholder{
+  color: grey;
+}
+
+.profile_pic img{
+    margin-left: 11px;
+    width: 75px;
+}
+
+.controls .login{
+    width: 80px;
+}
+#user_gender,
+#user_country{
+    width: 130px;
+}
+.field .date{
+    float: left;
+}
+.nav{
+    margin-top: 5px;
+}
+
+
+/*Profile Page*/
+.profile .string{
+    float: left;
+   * width: 460px;
+}
+.profile .control-group label{
+    float: left;
+    padding-top: 1px;
+    width: 130px;
+}
+.profile .controls{
+    float: left;
+    margin-left: 19px;
+    width: 310px;
+    margin-bottom: 14px;
+}
+.profile .controls textarea{
+     height: 70px;
+    width: 385px;
+}
+.profile .upload_container,
+.profile .control-group{
+    width: 500px;
+    margin-bottom: 15px;
+}
+.profile .pull-left{
+    margin-left: 10px;
+}
+.profile .upload_container .push{
+    margin: 20px;
+    float: left;
+    width: 65px;
+}
+.profile .btn-right{
+    float: right;
+}
+
+
+/* News Feed */
+.account-settings {
+    height: 130px;
+    width: 150px;
+}
+.account-settings img {
+    height: 85%;
+    width: 100%;
+}
+.public-profile {
+    line-height: 18px;
+    width: 86%;
+}
+.feed_container #related_post .content1{
+    padding: 8px;
+    padding-left: 0px;
+    border-bottom: 1px dotted #CCCCCC;
+
+}
+.public-profile h2{
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 12px;
+}
+.account-detail{
+    text-align: center;
+    width: auto;
+}
+.chart_selection select{
+    font-size: 10px;
+    height: 23px;
+    margin-left: 15px;
+    width: 74px;
+}
+.edit_pf{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: #0C6989;
+    padding: 10px;
+    font-size: 17px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.edit_pf a{
+    color: #fff;
+}
+
+.container .info{
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+#new_user .login-fields .field,
+#new_user .login-fields .field .optional{
+    float: left;
+}
+#new_user .login-fields .field .controls{
+    float: right;
+}
+.only_signup{
+    margin-left: 200px;
+    width: 380px;
+}
+.help-inline {
+    color: red;
+    font-weight: bold;
+}
+.agree .checkbox{
+    margin-bottom: 14px;
+    margin-top: -3px;
+    margin-right: 0px;
+    width: 10px;
+}
+.agree .required{
+    float: left;
+}
+.agree .choice{
+    float: left;
+    width: 152px;
+}
+.agree #user_agree{
+    width: 10px;
+}

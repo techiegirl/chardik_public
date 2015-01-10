@@ -1,0 +1,27 @@
+<% user_vote = vote.votes.limit(2).by_type(User).voters %>
+<% user_vote_up = vote.votes.up.by_type(User).voters %>
+<% user_vote_down = vote.votes.down.by_type(User).voters %>
+<%= vote.votes.size %> votes by <%= user_vote.map {|f| f.username.to_s }.join(', ') %> <%= link_to "view more","#myVote#{vote.id}", "data-toggle" => "modal" %>
+<div class="modal hide" id="myVote<%= vote.id %>">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">x</button>
+	  <h1>Voters</h1>
+	</div>
+	<div class="modal-body inbox">
+	  <div style="float: left;width: 200px">
+	    <h3>users vote up</h3>
+  	  <% user_vote_up.each do |f| %>
+  	    <%= f.username %><br/>
+  	  <% end %>
+	  </div>
+	  <div style="float: left;width: 200px">
+	    <h3>users vote down</h3>
+  	  <% user_vote_down.each do |f| %>
+  	    <%= f.username %><br/>
+  	  <% end %>
+	  </div>
+	</div>
+  <div class="modal-footer">
+	  <a href="#" class="btn" data-dismiss="modal">Close</a>
+  </div>
+</div>

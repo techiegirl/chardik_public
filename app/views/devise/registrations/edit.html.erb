@@ -1,0 +1,47 @@
+<%= render :partial => "shared/user_profile"-%>
+<div class="span6 profile">
+  <div class="well sidebar-nav signup">
+    <h2>Account Settings</h2>
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put,:class => "form-horizontal" }) do |f| %>
+        <fieldset>
+          <div class="control-group">
+            <%= f.input :username, :required => false, :autofocus => false,:input_html => {:class => "input-large focused"} %>
+            <%#= f.input :email, :required => false, :autofocus => false,:input_html => {:class => "input-large focused"} %>
+            <%= f.input :country, :required => false,:label => "Location", :autofocus => false,:input_html => {:class => "span3 gender"} %>
+            <%= f.input :website, :required => false, :autofocus => false,:input_html => {:class => "span3 gender"} %>
+            <%= f.input :bio, :required => false, :autofocus => false,:input_html => {:class => "span3 gender",:rows => "5"} %>
+            <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false,:input_html => {:class => "input-large focused"} %>
+            <%= f.input :password_confirmation, :required => false,:input_html => {:class => "input-large focused"} %>
+          </div>
+          <label class="control-label" for="focusedInput">Picture</label>
+          <div class="clearfix profile upload_container">
+            <div class="pthumb pull-left">
+              <%= image_tag current_user.avatar_url %>
+            </div>
+            <div class="buttonholder pull-left push">
+              <%= f.input :avatar, :as => :file, :input_html => {:id => "uploadme"},:label => false %>
+              <input type="button" id="clickme" value="upload" class="btn" />​
+            </div>
+          </div>
+          <!--<div class="control-group checks">-->
+          <!--<%# resource.build_user_setting unless resource.user_setting %>-->
+          <!--<%#= f.simple_fields_for :user_setting do |h| %>-->
+          <!--<%#= h.input :find_by_email,:label => "Let others find me by my email address" %>-->
+          <!--<div style="clear: both;"></div>-->
+          <!--<label class="control-label" for="optionsCheckbox">Email me when: </label>-->
+          <!--<div style="clear: both;"></div>-->
+          <!--<%#= h.input :new_follower,:label => "I get a new follower" %>-->
+          <!--<div style="clear: both;"></div>-->
+          <!--<%#= h.input :direct_message,:label => "I get a direct message" %>-->
+          <!--<div style="clear: both;"></div>-->
+          <!--<%#= h.input :comment_reply,:label => "I get a new coment reply" %>-->
+          <!--<%# end %>-->
+          <!--</div>-->
+          <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => false,:input_html => {:class => "input-large focused"} %>
+          <%= f.button :submit, "Update Account", :class => "btn-right" %>
+        </fieldset>
+    <% end %>
+  </div><!--/.well -->
+  <div class="shunt"></div>
+</div><!--/span-->
+<%#= render :partial => "partial_paging/follow" %>

@@ -1,0 +1,6 @@
+<div class="user_post">
+  <%= render :partial => 'related_post_partial', :locals => {:f => @related_posts} %>
+</div>
+<div id="paginator_post">
+  <%= paginate @related_posts, :remote => true%>
+</div>

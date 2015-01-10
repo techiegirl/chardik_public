@@ -1,0 +1,2 @@
+$('.user_post').html('<%= escape_javascript render(:partial => "related_post_partial", :locals => {:f => @related_posts}) %>');
+$('#paginator_post').html('<%= escape_javascript(paginate(@related_posts, :remote => true).to_s) %>');

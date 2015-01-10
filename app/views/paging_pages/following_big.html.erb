@@ -1,0 +1,7 @@
+<div class="users_big">
+  <%= render :partial => 'followlist_big', :locals => {:f => @follow_big_users} %>
+</div>
+<div class="clearfix"></div>
+<div id="paginator_big">
+  <%= paginate @follow_big_users, :remote => true %>
+</div>

@@ -1,0 +1,17 @@
+<% f.each do |fo| %>
+  <div class="content1">
+    <div class="thumb">
+      <%= image_tag fo.user.avatar_url %>
+    </div>
+    <p><span class="title"><a href="#"><%= fo.title%></a></span><br />
+    <span class="discussion">
+  	  <% if fo.user != current_user %>
+  	    <%= link_to follow_posts_path(:user => fo.user), :remote => true, :class => "follow#{fo.user.id}" do %>
+  	      <%= current_user.following?(fo.user) ? "Unfollow #{fo.user.username}" : "Following #{fo.user.username}"%>
+  	    <% end %>
+  	    <%= link_to "Send a message to #{fo.user.username}", "/messages" -%>
+  	  <% end %>
+    </span></p>
+  </div>
+  <div style="clear: both;"></div>
+<% end %>

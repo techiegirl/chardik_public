@@ -1,0 +1,8 @@
+<% if @post_news.current_page == 1 %>
+	$('#news .news_feed').html('<%= escape_javascript render(:partial => "paging_pages/news_feed", :locals => {:post_news => @post_news, :special => "" }) %>');
+<% else %>
+	$('#news .news_feed').html('<%= escape_javascript render(:partial => "paging_pages/news_feed", :locals => {:post_news => @post_news, :special => "" }) %>');
+<% end %>
+
+
+$('#news .pagination').replaceWith('<%= escape_javascript(paginate(@post_news, :remote => true).to_s) %>');

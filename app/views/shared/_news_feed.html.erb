@@ -1,0 +1,18 @@
+<div id="related_post">
+    <% post_news.each do |f|%>
+        <div class="content1 post_related">
+          <div class="thumb">
+            <%#= image_tag f.user.avatar_url %>
+          </div>
+          <p style="width: 400px;margin-bottom: 0;">
+            <span class="title">
+              <%= raw f.title[0..30] %>
+            </span>
+          </p>
+          <p style="float: right;font-size: 12px;text-align: right;width: 112px;">
+            <%= time_ago_in_words(f.created_at) -%> ago
+          </p>
+        </div>
+        <div style="clear: both;"></div>
+    <% end %>
+</div>

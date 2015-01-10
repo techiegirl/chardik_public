@@ -1,0 +1,9 @@
+<div class="well sidebar-nav">
+<h2>Search Results</h2>
+  <div class="search_result">
+    <%= render :partial => 'search_result', :locals => {:post => @posts} %>
+  </div>
+  <div id="paginator">
+    <%= paginate @posts, :remote => true%>
+  </div>
+</div><!--/.well -->

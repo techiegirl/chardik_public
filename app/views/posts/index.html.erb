@@ -1,0 +1,137 @@
+<%= render :partial => "shared/user_profile"-%>
+
+<!--main content-->			
+<div class="span6 posts_container">
+  <% if current_user.unread_message_count != 0 %>
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <%= link_to user_messages_path(current_user) do %>
+        You have <%= current_user.unread_message_count %> unread messages
+      <% end %>
+    </div>
+  <% end %>
+
+<!--input-->
+	<div class="inputwrap clearfix">  
+	    <%= simple_form_for @post_new, :url => callback_posts_path, :method => :get, :remote => true do |f| %>
+	    <div class="inputbox">
+	      <%= f.input :title, :label => false, :input_html => {:value => "#{@post_result}",:rows => "1", :placeholder => "What's happening?", :class => "input-80", :id => "auto_post", data: {autocomplete_source: autocomplete_posts_path}}%>
+          <%= f.submit "post", :class => "btn btn-info pull-right", :remote => true %>
+          <%= f.input :anonymous, :label => "Anonymous"%>
+	      <div id="auto_post_result"></div>
+	    </div>
+	    <% end %>
+	</div><!--/input-->
+
+<div class="shunt"></div>
+
+  <!--search results-->
+    <!--<div id="search" class="data_load" data-url="/paging_pages/search"></div>-->
+    <%= content_tag "div", :id => "posts", :data => {:url => callback_posts_path} do%>
+    <% end %>
+<div class="shunt"></div>
+<!--More Results-->	  
+<div id="moreresults" class="collapse">
+  <div class="well sidebar-nav">
+  <h2>User posts for this entity</h2>
+ 	  <div id="related_post"></div>
+ 	  <div id="paginator_post"></div>
+  </div><!--/.well --> 			  
+</div><!--/.collapse --> 
+
+  
+<div class="shunt"></div>
+<!--News Feed-->	  
+  <div class="well sidebar-nav news_feed">
+<h2>News Feed</h2>
+   <div id="news" class="data_load refresh" data-url="/paging_pages/news"></div>
+  <!--<div class="content1 trend">-->
+    <!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <span class="readmore"><a href="#">Read more...</a></span><br />-->
+    <!--</p>-->
+  <!--</div>-->
+  <!--<div class="content1 trend">-->
+    <!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <span class="readmore"><a href="#">Read more...</a></span><br />-->
+    <!--</p>-->
+  <!--</div>-->
+  <!--<div class="content1 trend">-->
+    <!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <span class="readmore"><a href="#">Read more...</a></span><br />-->
+    <!--</p>-->
+  <!--</div>-->
+ </div>
+</div><!--/span-->
+
+<!--right sidebar-->
+<!--<div class="span4">-->
+  <!--<div class="well sidebar-nav">-->
+  <!--<h2>Trending Topics</h2>-->
+ 	  <!--<div class="content1 trend">-->
+		<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <span class="readmore"><a href="#">Read more...</a></span><br />-->
+		<!--<span class="discussion">-->
+			<!--<a href="#">Link title</a> <a href="#">Link title</a>-->
+		<!--</span></p>-->
+		<!--</p>-->
+	  <!--</div>-->
+ 	  <!--<div class="content1 trend">-->
+		<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <span class="readmore"><a href="#">Read more...</a></span><br />-->
+		<!--<span class="discussion">-->
+			<!--<a href="#">Link title</a> <a href="#">Link title</a>-->
+		<!--</span></p>-->
+		<!--</p>-->
+	  <!--</div>-->
+ 	  <!--<div class="content1 trend">-->
+		<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <span class="readmore"><a href="#">Read more...</a></span><br />-->
+		<!--<span class="discussion">-->
+			<!--<a href="#">Link title</a> <a href="#">Link title</a>-->
+		<!--</span></p>-->
+		<!--</p>-->
+	  <!--</div>-->
+ 	  <!--<div class="content1 trend">-->
+		<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <span class="readmore"><a href="#">Read more...</a></span><br />-->
+		<!--<span class="discussion">-->
+			<!--<a href="#">Link title</a> <a href="#">Link title</a>-->
+		<!--</span></p>-->
+		<!--</p>-->
+	  <!--</div>-->
+ 	  <!--<div class="content1 trend">-->
+		<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <span class="readmore"><a href="#">Read more...</a></span><br />-->
+		<!--<span class="discussion">-->
+			<!--<a href="#">Link title</a> <a href="#">Link title</a>-->
+		<!--</span></p>-->
+		<!--</p>-->
+	  <!--</div>-->
+ 	  <!--<div class="content1 trend">-->
+		<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <span class="readmore"><a href="#">Read more...</a></span><br />-->
+		<!--<span class="discussion">-->
+			<!--<a href="#">Link title</a> <a href="#">Link title</a>-->
+		<!--</span></p>-->
+		<!--</p>-->
+	  <!--</div>-->
+ 	  <!--<div class="content1 trend">-->
+		<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <span class="readmore"><a href="#">Read more...</a></span><br />-->
+		<!--<span class="discussion">-->
+			<!--<a href="#">Link title</a> <a href="#">Link title</a>-->
+		<!--</span></p>-->
+		<!--</p>-->
+	  <!--</div>-->
+ 	  <!--<div class="content1 trend">-->
+		<!--<p><span class="title"><a href="#">Trending topic title link</a></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  <span class="readmore"><a href="#">Read more...</a></span><br />-->
+		<!--<span class="discussion">-->
+			<!--<a href="#">Link title</a> <a href="#">Link title</a>-->
+		<!--</span></p>-->
+		<!--</p>-->
+	  <!--</div>-->
+	  <!---->
+		<!--<div class="pagination">-->
+			<!--<ul>-->
+				<!--<li><a href="#"><</a></li>-->
+				<!--<li class="active">-->
+				<!--<a href="#">1</a>-->
+				<!--</li>-->
+				<!--<li><a href="#">2</a></li>-->
+				<!--<li><a href="#">3</a></li>-->
+				<!--<li><a href="#">4</a></li>-->
+				<!--<li><a href="#">></a></li>-->
+			<!--</ul>-->
+		<!--</div>-->
+  <!--</div>-->
+<!--</div>-->

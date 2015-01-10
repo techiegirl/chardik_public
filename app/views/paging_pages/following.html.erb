@@ -1,0 +1,14 @@
+<h2>Users you follow</h2>
+<p>
+  <a href="#" class="listlink change_view" data-attr="users">Change view</a>
+</p>
+<div class="users">
+  <%= render :partial => 'followlist', :locals => {:f => @follow_users} %>
+</div>
+<div class="users thumb" style="display:none">
+  <%= render :partial => 'followthumb', :locals => {:f => @follow_users} %>
+</div>
+<div class="clearfix"></div>
+<div id="paginator">
+  <%= paginate @follow_users, :remote => true%>
+</div>
